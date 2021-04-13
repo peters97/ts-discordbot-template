@@ -7,7 +7,7 @@ import {
     CommandNotFound
 } from "@typeit/discord";
 
-@Discord("!")
+@Discord(process.env.COMMAND_PREFIX)
 abstract class Commands {
     @Command("ping")
     private ping(message: CommandMessage) {

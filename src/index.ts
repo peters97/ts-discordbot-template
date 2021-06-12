@@ -1,20 +1,6 @@
-import { Client } from "@typeit/discord";
+import { BotClient } from "./classes/BotClient";
+import * as Dotenv from "dotenv";
 
 
-async function start() {
-    require('dotenv').config()
-
-    const client = new Client({
-        classes: [
-            `${__dirname}/classes/*.ts`,
-            `${__dirname}/classes/*.js`
-        ],
-        silent: false,
-        variablesChar: ":"
-    });
-
-    await client.login(process.env.DISCORD_API_TOKEN);
-}
-
-start();
-
+Dotenv.config()
+BotClient.boot();
